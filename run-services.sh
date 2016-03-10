@@ -29,9 +29,10 @@ if [ ! -f /etc/zabbix/web/zabbix.conf.php ]; then
    sed -i "s/\$DB\['PASSWORD'\].*/\$DB\['PASSWORD'\] = '${DB_PASS}';/" /etc/zabbix/web/zabbix.conf.php
 fi
 
-trap "service apache2 stop; service zabbix-server stop" SIGINT SIGTERM SIGHUP
+trap "service zabbix-agent stop; service apache2 stop; service zabbix-server stop" SIGINT SIGTERM SIGHUP
 service zabbix-server start
 service apache2 start
+service zabbix-agent start
 
 tail -qF /var/log/zabbix/zabbix_server.log &
 wait

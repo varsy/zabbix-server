@@ -6,7 +6,7 @@ RUN apt-get install -y wget && wget http://repo.zabbix.com/zabbix/3.0/ubuntu/poo
    dpkg -i zabbix-release_3.0-1+trusty_all.deb && \
    apt-get -y update
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y zabbix-server-mysql zabbix-frontend-php
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y zabbix-server-mysql zabbix-frontend-php zabbix-agent
 
 ADD run-services.sh /
 RUN chmod +x /run-services.sh
