@@ -11,7 +11,7 @@ There are following environment variables you need to set:
 
 For example:
 ```
-/usr/bin/docker run --rm -p 8080:80 -p 10051:10051 -e \
-DB_HOST=mysql.example.com -e DB_USER=root \
-DB_PASS=password --name zabbix-server varsy/zabbix-server:latest
+/usr/bin/docker run --rm -p 8080:80 -p 10051:10051 \
+-e DB_HOST=mysql.example.com -e DB_USER=root \
+-e DB_PASS=password --name zabbix-server varsy/zabbix-server:latest
 ```
