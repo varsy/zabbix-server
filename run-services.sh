@@ -19,7 +19,8 @@ sed -i "s/^.*DBHost=localhost.*$/DBHost=${DB_HOST}/" /etc/zabbix/zabbix_server.c
 sed -i "s/^DBUser=zabbix$/DBUser=${DB_USER}/" /etc/zabbix/zabbix_server.conf
 sed -i "s/^.*DBPassword=$/DBPassword=${DB_PASS}/" /etc/zabbix/zabbix_server.conf
 sed -i "s/^.*JavaGateway=$/JavaGateway=127.0.0.1/" /etc/zabbix/zabbix_server.conf
-
+sed -i "s/^.*JavaGatewayPort=.*$/JavaGatewayPort=10052/" /etc/zabbix/zabbix_server.conf
+sed -i "s/^.*StartJavaPollers=.*$/StartJavaPollers=5/" /etc/zabbix/zabbix_server.conf
 sed -i "s/# php_value date.timezone.*/php_value date.timezone Europe\/Moscow/" /etc/zabbix/apache.conf
 
 if [ ! -f /etc/zabbix/web/zabbix.conf.php ]; then
