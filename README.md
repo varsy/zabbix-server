@@ -1,6 +1,6 @@
 # docker-zabbix-server
 
-This is docker image with Zabbix 3.0 server + web UI + zabbix agent.
+This is docker image with Zabbix 3.0 server + web UI + java gateway + zabbix agent.
 
 Docker image is located at [varsy/zabbix-server](https://hub.docker.com/r/varsy/zabbix-server/).
 
