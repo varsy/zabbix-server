@@ -23,6 +23,8 @@ sed -i "s/^.*JavaGatewayPort=.*$/JavaGatewayPort=10052/" /etc/zabbix/zabbix_serv
 sed -i "s/^.*StartJavaPollers=.*$/StartJavaPollers=5/" /etc/zabbix/zabbix_server.conf
 sed -i "s/# php_value date.timezone.*/php_value date.timezone Europe\/Moscow/" /etc/zabbix/apache.conf
 
+sed -i "s/^START=no$/START=yes/" /etc/default/zabbix-server
+
 if [ ! -f /etc/zabbix/web/zabbix.conf.php ]; then
    cp -p /usr/share/zabbix/conf/zabbix.conf.php.example /etc/zabbix/web/zabbix.conf.php
    sed -i "s/\$DB\['SERVER'\].*/\$DB\['SERVER'\] = '${DB_HOST}';/" /etc/zabbix/web/zabbix.conf.php
